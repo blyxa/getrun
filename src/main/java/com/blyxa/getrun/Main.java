@@ -139,7 +139,9 @@ public class Main {
                 return packagesRetrieved.getRetrievedFiles();
             }
             throw new Exception("Dependencies not found");
-        }else{
+        }
+        else{
+            System.out.println("artifacts folder detected... skipping download.");
             return Arrays.stream(new File(BASEDIR.getName()).listFiles())
                     .filter(f->f.getName().endsWith(".jar"))
                     .collect(Collectors.toList());
